@@ -79,7 +79,7 @@ jobs:
       - run: npm install
         working-directory: pontoon
       - run: mkdir -p translate/dist translate/public
-      - run: python manage.py collectstatic
+      - run: python manage.py collectstatic --noinput
 
       # Check if there are missing migrations
       - name: Verify missing migrations

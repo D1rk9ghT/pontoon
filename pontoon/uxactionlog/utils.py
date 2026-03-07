@@ -1,7 +1,7 @@
 from pontoon.uxactionlog.models import UXActionLog
 
 
-def log_ux_action(action_type, experiment=None, data={}):
+def log_ux_action(action_type, experiment=None, data=None):
     """Save a new UX action in the database.
 
     :arg string action_type: The type of action that was performed.
@@ -10,5 +10,7 @@ def log_ux_action(action_type, experiment=None, data={}):
 
     :returns: None
     """
+    if data is None:
+        data = {}
     action = UXActionLog(action_type=action_type, experiment=experiment, data=data)
     action.save()

@@ -28,11 +28,11 @@ class Command(BaseCommand):
         self.warmup_contributors_cache()
         self.warmup_insights_cache()
 
-    def warmup_url(self, url, keys=[], is_ajax=False):
+    def warmup_url(self, url, keys=None, is_ajax=False):
         try:
             # Make sure cache data is refreshed by deleting it
             # before making a request which will populate it again.
-            for key in keys:
+            for key in keys or []:
                 cache.delete(key)
 
             headers = {"x-requested-with": "XMLHttpRequest"} if is_ajax else None
