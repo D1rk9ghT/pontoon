@@ -193,7 +193,6 @@ if __name__ == "__main__":
     # Only try Django imports if running in proper environment
     try:
         import django
-        demonstrate_dict_bug()
         verify_actual_code()
     except ImportError:
         print("ℹ Django not available. Skipping actual code verification.")

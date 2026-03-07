@@ -48,8 +48,6 @@ echo ""
 
 # Check .github/workflows/backend.yml
 echo "--- Checking .github/workflows/backend.yml ---"
-WORKFLOW="/.github/workflows/backend.yml"
-# Use full path since we're in the repo root
 WORKFLOW=".github/workflows/backend.yml"
 if [ -f "$WORKFLOW" ]; then
     COLLECTSTATIC_LINE=$(grep 'collectstatic' "$WORKFLOW" || true)
