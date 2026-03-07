@@ -48,7 +48,7 @@ export function AddonPromotion(): React.ReactElement<'div'> | null {
     return () => {
       window.removeEventListener('message', handleMessages);
     };
-  });
+  }, []);
 
   const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
   const isChrome = navigator.userAgent.indexOf('Chrome') !== -1;

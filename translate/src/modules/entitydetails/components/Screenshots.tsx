@@ -55,7 +55,7 @@ export function Screenshots({ locale, source }: Props) {
     return () => {
       window.document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [!openImage]);
+  }, [openImage]);
 
   const images = getImageURLs(source, locale);
 
